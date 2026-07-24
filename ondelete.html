@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeyNoices — Farewell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ───────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0e1013;       /* Deep matte slate charcoal */
+      --bg-elevated:#14171c;       /* Card/Nav structural surface */
+      --border:     #232830;       /* Structured flat border line */
+      
+      --accent:     #d4c5b9;       /* Cream/warm beige keycap base highlight */
+      --accent-cool:#6366f1;       /* Premium Indigo/Violet keyboard accent color */
+      --accent-dim: #181926;       /* Soft dark violet container tint */
+      
+      --text:       #f4f4f6;       /* Off-white readable canvas text */
+      --sub:        #9ca3af;       /* Mid-tone muted slate */
+      --muted:      #4b5563;       /* Subdued metadata stamp line */
+
+      --r-sm: 4px;
+      --r-md: 6px;
+      --r-lg: 8px;
+      
+      --transition: cubic-bezier(0.25, 1, 0.5, 1) 0.4s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(14, 16, 19, 0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-badge {
+      font-size: 12px;
+      color: var(--sub);
+      font-family: monospace;
+    }
+
+    /* ─── HERO & LINK CONTAINER ──────────────────────────────────────────────── */
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: left;
+    }
+
+    .hero-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-cool);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--sub);
+      max-width: 580px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .support-panel {
+      background: var(--accent-dim);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      transition: border-color var(--transition);
+    }
+
+    .support-panel:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .donate-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .donate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .donate-btn:hover {
+      border-color: var(--accent-cool);
+      background: var(--border);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+    .footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-link {
+      color: var(--sub);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-cool);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-text">KeyNoices</span>
+      </div>
+      <span class="nav-badge">Uninstalled</span>
+    </div>
+  </nav>
+
+  <!-- ── HERO: THANK YOU & LINKS ── -->
+  <header class="hero">
+    <p class="hero-tag">KeyNoices</p>
+    <h1 class="hero-title">Thank You!</h1>
+    <p class="hero-sub">Thanks for giving KeyNoices a spin. If you enjoyed the chaos while it lasted, feel free to check out my portfolio or support future projects.</p>
+    
+    <!-- Integrated Links Block -->
+    <div class="support-panel">
+      <div class="donate-links">
+        <a class="donate-btn" href="https://www.buymeachai.in/shibansh.w" target="_blank" rel="noopener noreferrer">
+          Buy Me a Coffee ☕
+        </a>
+        <a class="donate-btn" href="https://shibansh-s.vercel.app/" target="_blank" rel="noopener noreferrer">
+          Find me 🌐
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <span>KeyNoices Open Utility Pack</span>
+    <a class="footer-link" href="https://github.com/ShibanshL" target="_blank" rel="noopener noreferrer">Source Code</a>
+  </footer>
+
+</body>
+</html>
