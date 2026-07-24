@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KeyNoices — Farewell</title>
+  <link rel="icon" type="image/png" href="./v1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -67,6 +68,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    .logo-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: var(--r-sm);
     }
 
     .logo-text {
@@ -194,6 +201,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <div class="logo">
+        <img class="logo-icon" src="../keycaps/v1.png" alt="KeyNoices logo" />
         <span class="logo-text">KeyNoices</span>
       </div>
       <span class="nav-badge">Uninstalled</span>
